@@ -149,7 +149,7 @@ All function define inital setting file for Nuvoton N76E003
 /****************************************************************************
    Enable INT port 0~3
 ***************************************************************************/
-#define 	Enable_INT_Port0					PICON &= 0xFB;
+#define 	Enable_INT_Port0					PICON &= 0xFC; //clear last two bits for Port0
 #define		Enable_INT_Port1					PICON |= 0x01;
 #define		Enable_INT_Port2					PICON |= 0x02;
 #define		Enable_INT_Port3					PICON |= 0x03;
@@ -163,7 +163,7 @@ All function define inital setting file for Nuvoton N76E003
 #define		Enable_BIT3_LowLevel_Trig			PICON&=0xDF;PINEN|=0x08;PIPEN&=0xF7
 #define		Enable_BIT2_LowLevel_Trig			PICON&=0xEF;PINEN|=0x04;PIPEN&=0xFB
 #define		Enable_BIT1_LowLevel_Trig			PICON&=0xF7;PINEN|=0x02;PIPEN&=0xFD
-#define		Enable_BIT0_LowLevel_Trig			PICON&=0xFD;PINEN|=0x01;PIPEN&=0xFE
+#define		Enable_BIT0_LowLevel_Trig			PICON&=0xFB;PINEN|=0x01;PIPEN&=0xFE  //Clear 3rd bit in PICON
 /*****************************************************************************
  Enable each bit high level trig mode
 *****************************************************************************/
@@ -174,7 +174,7 @@ All function define inital setting file for Nuvoton N76E003
 #define		Enable_BIT3_HighLevel_Trig			PICON&=0xDF;PINEN&=0xF7;PIPEN|=0x08
 #define		Enable_BIT2_HighLevel_Trig			PICON&=0xEF;PINEN&=0xFB;PIPEN|=0x04
 #define		Enable_BIT1_HighLevel_Trig			PICON&=0xF7;PINEN&=0xFD;PIPEN|=0x02
-#define		Enable_BIT0_HighLevel_Trig			PICON&=0xFD;PINEN&=0xFE;PIPEN|=0x01
+#define		Enable_BIT0_HighLevel_Trig			PICON&=0xFB;PINEN&=0xFE;PIPEN|=0x01 //Clear 3rd bit in PICON 
 /*****************************************************************************
  Enable each bit falling edge trig mode
 *****************************************************************************/
